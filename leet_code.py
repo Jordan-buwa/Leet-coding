@@ -17,7 +17,7 @@ class LeetCode:
             lst = num_as_list[::-1]
             return num_as_list == lst
 
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         assert len(nums) >= 2 and len(nums) <= 1e+4
 
         assert -1e+9 <= target and target <= 1e+9 
