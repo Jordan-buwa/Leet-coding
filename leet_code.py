@@ -6,6 +6,8 @@ The methods include:
 2. twoSum: This method finds two numbers in a list that add up to a given target.
 3. removeDuplicates: This method removes duplicates from a sorted list in-place.
 4. plusOne: This method increments a non-negative integer represented as a list of digits by one.
+5. mySqrt: This method computes the integer square root of a non-negative integer. Returns the integer part of the square root.
+
 """
 class LeetCode:
     def isPalindrome(self, x: int) -> bool:
@@ -103,5 +105,26 @@ class LeetCode:
             return [1] + digits
         else:
             return digits
-        
+    
+    def mySqrt(self, x: int) -> int:
+        tol = 1e-9
+        """
+        We are going to iteratively determine the squared root of x
+        The sequence will be u(t+1) = 0.5*(u(t)+x/u(t))
+        Args:
+            x (int): A non-negative integer.
+        Returns:
+            int: The integer part of the square root of x.
+        Constraints:
+            0 <= x <= 2^31 - 1
+        """
+        assert x >= 0 and x <= 2**31 - 1
+        ut = x/2
+        tem = 0; err = 1
+        while err > tol:
+            tem, ut = ut, ut
+            ut = 0.5 * (ut + x/ut)
+            err = abs(tem - ut) 
+        return int(ut//1)
+                
         
