@@ -40,4 +40,32 @@ class LeetCode:
             i += 1
         k += 1
         return k
+
+    
+    def plusOne(self, digits: list[int]) -> list[int]:
+        """Given a non-empty array of digits representing a non-negative integer, 
+        this function increment one to the integer. 
+        Args:
+            digits (list[int]): A list of integers representing a non-negative integer.
+        Returns:
+            list[int]: A list of integers representing the incremented integer.
+        Constraints:
+            1 <= digits.length <= 100
+            0 <= digits[i] <= 9        
+            """
+        n = len(digits); i = n - 1
+        while i >= 0:
+            if digits[i] < 9:
+                digits[i] += 1
+                break
+            else:
+                digits[i] = 0
+                i -= 1
+        if digits[0] == 0:
+            return [1] + digits
+        else:
+            return digits
+        
+
+
         
