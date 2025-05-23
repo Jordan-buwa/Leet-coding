@@ -6,6 +6,8 @@ The methods include:
 2. twoSum: This method finds two numbers in a list that add up to a given target.
 3. removeDuplicates: This method removes duplicates from a sorted list in-place.
 4. plusOne: This method increments a non-negative integer represented as a list of digits by one.
+5. mySqrt: This method computes the integer square root of a non-negative integer. Returns the integer part of the square root.
+
 """
 class LeetCode:
     def isPalindrome(self, x: int) -> bool:
