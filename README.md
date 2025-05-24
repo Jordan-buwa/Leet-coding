@@ -58,7 +58,7 @@ from leet_code import LeetCode as lc
 new_obj = lc()
 print(new_obj.mySqrt(20))
 
-# The squared root of 20 is 4.47213595 
+# The squared root of 20 is 4.47213595  
 ```
 Output: 4
 - Find median of two sorted arrays
