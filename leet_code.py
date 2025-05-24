@@ -145,5 +145,60 @@ class LeetCode:
             return (new_array[n//2] + new_array[n//2 - 1])/2
         else:
             return new_array[n//2]
+
+    def intToRoman(self, num: int) -> str:
+        """Convert an integer to a Roman numeral.
+        Args:
+            num (int): An integer between 1 and 3999.
+        Returns:
+            str: The Roman numeral representation of the integer.
+        """
+        dic = {1: 'I',
+        5: 'V',
+        10: 'X',
+        50: 'L',
+        100: 'C',
+        500: 'D',
+        1000: 'M'
+        }
+        num = str(num)
+        n = len(num)
+        lst_num = [int(s) for s in num]
+        roman = ''
+        for i, elt in enumerate(lst_num):
+            j = n - i
+            if j == 4:
+                roman += elt * dic[1000]
+            elif j == 3 and elt < 4:
+                roman += elt * dic[100]
+            elif j == 3 and elt >= 5 and elt < 9:           
+                roman += dic[500] + (-5+elt) * dic[100]
+            elif j == 3 and elt == 4:
+                roman += dic[100] + dic[500]
+            elif j == 3 and elt == 9:           
+                roman += dic[100] + dic[1000]
+
+
+
+            elif j == 2 and elt < 4:
+                roman += elt * dic[10]
+            elif j == 2 and elt >= 5 and elt < 9:           
+                roman += dic[50] + (-5+elt) * dic[10]
+            elif j == 2 and elt == 4:
+                roman += dic[10] + dic[50]
+            elif j == 2 and elt == 9:           
+                roman += dic[10] + dic[100]
+
+
+            elif j == 1 and elt < 4:
+                roman += elt * dic[1]
+            elif j == 1 and elt >= 5 and elt < 9:           
+                roman += dic[5] + (-5+elt) * dic[1]
+            elif j == 1 and elt == 4:
+                roman += dic[1] + dic[5]
+            elif j == 1 and elt == 9:           
+                roman += dic[1] + dic[10]
+                
+        return roman
                 
         
