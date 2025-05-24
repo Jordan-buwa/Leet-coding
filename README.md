@@ -83,6 +83,17 @@ print(new_obj.intToRoman(1994))
 ```
 Output: "MCMXCIV"
 
+- Roman numeral to integer conversion  
+This function converts a Roman numeral string to its integer value.  
+### Example
+```python
+from leet_code import LeetCode as lc
+
+new_obj = lc()
+print(new_obj.romanToInt("MCMXCIV"))
+```
+Output: 1994
+
 ## Usage
 
 1. Install dependencies:

@@ -9,6 +9,7 @@ The methods include:
 5. mySqrt: This method computes the integer square root of a non-negative integer. Returns the integer part of the square root.
 6. findMedianSortedArrays: This method finds the median of two sorted arrays.
 7. intToRoman: This method converts an integer to its Roman numeral representation.
+8. romanToInt: This method converts a Roman numeral to its integer representation.
 
 """
 class LeetCode:
@@ -202,5 +203,42 @@ class LeetCode:
                 roman += dic[1] + dic[10]
                 
         return roman
+
+    def romanToInt(self, s: str) -> int:
+        """Convert a Roman numeral to an integer.
+        Args:
+            s (str): A Roman numeral string.
+        Returns:
+            int: The integer representation of the Roman numeral.
+        """
+        dic = {'I':1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000}
+        num = 0
+        i = 0
+        if len(s) == 1:
+            return dic[s]
+        while i <= len(s)-1:
+            count = 0
+            t = s[i]
+            j = i
+            if dic[s[i]] >= dic[s[i+1]]: 
+                while j <= len(s)-1 and s[j] == t:
+                    count += 1
+                    j += 1
+                num += count * dic[t]
+                i = j 
+            if j < len(s) - 1 and  dic[s[j]] < dic[s[j+1]]:
+                num += dic[s[j+1]] - dic[s[j]]
+                i = j + 2
+            if i == len(s) - 1:
+                num += dic[s[i]]
+                break
+
+        return num
                 
         
