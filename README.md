@@ -50,7 +50,7 @@ print(new_obj.plusOne([9]))
 Output: [1,0]
 - Integer square root calculation
 This compute the squared root of a number and returns its integer part. The algorithm implements the sequence
-$$u_{n+1} = \frac{1}{2}\left(u_n + \frac{x}{u_n}\right)$$ which we know converges to \(\sqrt{x}).
+$$u_{n+1} = \frac{1}{2}\left(u_n + \frac{x}{u_n}\right)$$ which we know converges to \(\sqrt{x}\).
 ### Example
 ```python
 from leet_code import LeetCode as lc
