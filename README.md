@@ -72,6 +72,17 @@ print(new_obj.findMedianSortedArrays([1,2],[3,4]))
 ```
 Output: 2.5
 
+- Integer to Roman numeral conversion  
+This function converts an integer to its Roman numeral representation.  
+### Example
+```python
+from leet_code import LeetCode as lc
+
+new_obj = lc()
+print(new_obj.intToRoman(1994))
+```
+Output: "MCMXCIV"
+
 ## Usage
 
 1. Install dependencies:
