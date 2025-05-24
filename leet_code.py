@@ -126,5 +126,24 @@ class LeetCode:
             ut = 0.5 * (ut + x/ut)
             err = abs(tem - ut) 
         return int(ut//1)
+
+    def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
+        """Given two sorted arrays nums1 and nums2 of size m and n respectively,
+        this function returns the median of the two sorted arrays.
+        Args:
+            nums1 (list[int]): A sorted list of integers.
+            nums2 (list[int]): A sorted list of integers.
+        Returns:
+            float: The median of the two sorted arrays.
+        """
+        nums1 = list(nums1)
+        nums2 = list(nums2)
+        new_array = nums1 + nums2
+        new_array.sort()
+        n = len(new_array)
+        if n % 2 == 0:
+            return (new_array[n//2] + new_array[n//2 - 1])/2
+        else:
+            return new_array[n//2]
                 
         
