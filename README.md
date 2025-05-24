@@ -76,12 +76,12 @@ Output: 2.5
 
 1. Install dependencies:
     ```
-    pip install -r [requirements.txt](http://_vscodecontentref_/0)
+    pip install -r requirements.txt
     ```
 
 2. Run the main script:
     ```
-    python [main.py](http://_vscodecontentref_/1)
+    python main.py
     ```
 
 ## File Structure
