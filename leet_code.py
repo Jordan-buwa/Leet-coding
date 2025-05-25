@@ -100,14 +100,12 @@ class LeetCode:
         while i >= 0:
             if digits[i] < 9:
                 digits[i] += 1
-                break
+                return digits
             else:
                 digits[i] = 0
                 i -= 1
         if digits[0] == 0:
             return [1] + digits
-        else:
-            return digits
     
     def mySqrt(self, x: int) -> int:
         tol = 1e-9
@@ -126,7 +124,7 @@ class LeetCode:
         tem = 0; err = 1
         while err > tol:
             tem, ut = ut, ut
-            ut = 0.5 * (ut + x/ut)
+            ut = 0.5 * (ut + x/(ut+1e-10))  # Adding a small value to avoid division by zero
             err = abs(tem - ut) 
         return int(ut//1)
 
