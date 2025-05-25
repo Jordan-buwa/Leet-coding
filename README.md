@@ -94,6 +94,22 @@ print(new_obj.romanToInt("MCMXCIV"))
 ```
 Output: 1994
 
+- Reverse integer  
+This function reverses the digits of an integer. If reversing the integer causes it to go outside the signed 32-bit integer range, it returns 0.  
+### Example
+```python
+from leet_code import LeetCode as lc
+
+new_obj = lc()
+print(new_obj.reverse(123))
+print(new_obj.reverse(-456))
+print(new_obj.reverse(1534236469))  # Example of overflow
+```
+Output:  
+123 → 321  
+-456 → -654  
+1534236469 → 0 
+
 ## Usage
 
 1. Install dependencies:

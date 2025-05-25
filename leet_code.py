@@ -10,6 +10,7 @@ The methods include:
 6. findMedianSortedArrays: This method finds the median of two sorted arrays.
 7. intToRoman: This method converts an integer to its Roman numeral representation.
 8. romanToInt: This method converts a Roman numeral to its integer representation.
+9. reverse: This method reverses the digits of an integer.
 
 """
 class LeetCode:
@@ -238,5 +239,29 @@ class LeetCode:
                 break
 
         return num
+
+    def reverse(self, x: int) -> int:
+        """Reverse the digits of an integer.
+        Args:
+            x (int): An integer.
+        Returns:
+            int: The reversed integer, or 0 if the reversed integer is outside the range [-2^31, 2^31 - 1].
+        Constraints:
+            -2^31 <= x <= 2^31 - 1
+        """
+        if x >= 0:
+            lst = []
+            while x >= 10:
+                lst.append(x%10)
+                x //= 10
+            lst.append(x)
+            n = len(lst)
+            rev = 0
+            for i in range(n):
+                j = n - i - 1
+                rev += 10**j * lst[i]
+            return rev * (rev >= - 2**31 and rev <= 2**31 - 1)
+        else:
+            return -self.reverse(-x)
                 
         
