@@ -11,6 +11,7 @@ The methods include:
 7. intToRoman: This method converts an integer to its Roman numeral representation.
 8. romanToInt: This method converts a Roman numeral to its integer representation.
 9. reverse: This method reverses the digits of an integer.
+10. divide: This method divides two integers without using multiplication, division, or mod operator.
 
 """
 class LeetCode:
@@ -263,5 +264,34 @@ class LeetCode:
             return rev * (rev >= - 2**31 and rev <= 2**31 - 1)
         else:
             return -self.reverse(-x)
+
+    def divide(self, dividend: int, divisor: int) -> int:
+        """Divide two integers without using multiplication, division, or mod operator.
+        Args:
+            dividend (int): The dividend.
+            divisor (int): The divisor.
+        Returns:
+            int: The quotient of the division, or 2^31 - 1 if the quotient exceeds the range.
+        Constraints:
+            -2^31 <= dividend, divisor <= 2^31 - 1
+            divisor != 0
+        """
+        M = 2**31 - 1; m = - 2**31
+        divd = abs(dividend)
+        divr = abs(divisor)
+        neg = (dividend < 0) != (divisor < 0)
+
+        count = 0
+        while divd >= divr:
+            tem = divr
+            n = 1
+            while divd >= tem + tem:
+                tem += tem
+                n += n
+            divd -= tem
+            count += n
+        return max(- count, m) if neg else min(count, M)
+
+            
                 
         

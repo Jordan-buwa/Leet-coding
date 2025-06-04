@@ -110,6 +110,22 @@ Output:
 -456 → -654  
 1534236469 → 0 
 
+- Integer division without using multiplication, division, or mod operator  
+This function divides two integers and returns the quotient after dividing dividend by divisor. If the result overflows, it returns the maximum 32-bit signed integer value.
+### Example
+```python
+from leet_code import LeetCode as lc
+
+new_obj = lc()
+print(new_obj.divide(10, 3))
+print(new_obj.divide(7, -3))
+print(new_obj.divide(-2147483648, -1))  # Example of overflow
+```
+Output:  
+10 ÷ 3 → 3  
+7 ÷ -3 → -2  
+-2147483648 ÷ -1 → 2147483647
+
 ## Usage
 
 1. Install dependencies:
